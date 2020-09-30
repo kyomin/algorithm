@@ -1,17 +1,23 @@
 #include <iostream>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
-int ans = 1;			// 처음엔 1
-int curOperCnt = 0;		// 연산 횟수
-bool foundAns = false;	// 답을 찾았는가?
 int D, P;
+long long maxNum;
 
-// 자릿수 계산
-int calcDigits(int num) {
+/*
+	{ num, cnt }, true/false
+	cnt 횟수만큼 num이 만들어졌는가?
+*/
+map<pair<long long, int>, bool> visited;
+
+// 자릿수 구하는 함수
+int getLength(long long num) {
 	int result = 0;
 
-	while (num != 0) {
+	while (num) {
 		num /= 10;
 		result++;
 	}
@@ -19,41 +25,33 @@ int calcDigits(int num) {
 	return result;
 }
 
-void dfs() {
-	// P회의 연산을 했다면
-	if (curOperCnt == P) {
-		// 연산 결과가 D자리를 넘기지 않는다면
-		if (calcDigits(ans) <= D) 
-			foundAns = true;
+void simulation(long long num, int cnt) {
+	// 가지 치기 : 연산 횟수와 결과가 같은 경우 or 자릿수 범위를 초과
+	if (visited.count({ num, cnt }) || getLength(num) > D)
+		return;
 
+	visited[{ num, cnt }] = true;
+
+	// 연산 횟수를 채웠다면
+	if (cnt == P) {
+		maxNum = max(maxNum, num);
 		return;
 	}
 
-	for (int i = 9; i >= 2; i--) {
-		ans *= i;
-		curOperCnt++;
-
-		dfs();
-
-		if (foundAns)
-			return;
-
-		ans /= i;
-		curOperCnt--;
-	}
+	for (int i = 2; i <= 9; i++)
+		simulation(num*i, cnt + 1);
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> D >> P;
 
-	dfs();
+	maxNum = -1;
+	simulation(1, 0);
 
-	if (foundAns) {
-		cout << ans << '\n';
-	}
-	else {
-		cout << -1 << '\n';
-	}
+	cout << maxNum << '\n';
 
 	return 0;
 }
