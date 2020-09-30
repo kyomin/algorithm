@@ -7,6 +7,9 @@ using namespace std;
 int arr[10];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	string N;
 	cin >> N;
 
