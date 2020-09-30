@@ -15,6 +15,9 @@ bool isCrushed = false;
 string result;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> X >> Y;
 	cin >> N >> M;
 
