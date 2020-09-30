@@ -11,12 +11,10 @@ string start, target;
 
 // 9999까지의 소수를 구한다.
 void eratosthenes() {
-	for (int i = 2; i <= 9999; i++) {
-		if (!prime[i]) {
+	for (int i = 2; i <= 9999; i++)
+		if (!prime[i])
 			for (int j = i * i; j <= 9999; j+=i)
 				prime[j] = true;
-		}
-	}
 }
 
 int bfs() {
