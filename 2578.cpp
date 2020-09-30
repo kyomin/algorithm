@@ -17,11 +17,12 @@ int bingo(int y, int x, int dirY, int dirX) {
 }
 
 int main() {
-	for (int y = 1; y <= 5; y++) {
-		for (int x = 1; x <= 5; x++) {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
+	for (int y = 1; y <= 5; y++)
+		for (int x = 1; x <= 5; x++)
 			cin >> board[y][x];
-		}
-	}
 
 	int cnt = 0;
 
