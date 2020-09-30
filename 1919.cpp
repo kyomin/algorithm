@@ -7,6 +7,9 @@ int A[26];
 int B[26];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	string s1, s2;
 	cin >> s1 >> s2;
 
