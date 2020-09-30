@@ -18,6 +18,9 @@ struct cmp {
 priority_queue< A, vector<A>, cmp > pq;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	for (int row = 1; row <= 9; row++) {
 		for (int col = 1; col <= 9; col++) {
 			int num;
