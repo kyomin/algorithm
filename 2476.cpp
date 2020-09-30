@@ -5,8 +5,10 @@
 using namespace std;
 
 int main() {
-	vector<int> results;
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
 
+	vector<int> results;
 	int N;
 	cin >> N;
 
@@ -14,9 +16,8 @@ int main() {
 		vector<int> v;
 		v.resize(3);
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 3; i++)
 			cin >> v[i];
-		}
 
 		int result;
 
