@@ -46,13 +46,14 @@ void bfs(int y, int x) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> Y >> X;
 
-	for (int y = 0; y < Y; y++) {
-		for (int x = 0; x < X; x++) {
+	for (int y = 0; y < Y; y++)
+		for (int x = 0; x < X; x++)
 			cin >> map[y][x];
-		}
-	}
 
 	for (int y = 0; y < Y; y++) {
 		for (int x = 0; x < X; x++) {
