@@ -30,6 +30,9 @@ void makeArr(vector<int>& v) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
 
 	for (int start = N / 2; start <= N; start++) {
@@ -50,9 +53,8 @@ int main() {
 
 	cout << len << '\n';
 
-	for (int i = 0; i < len; i++) {
+	for (int i = 0; i < len; i++)
 		cout << result[i] << ' ';
-	}
 
 	cout << '\n';
 
