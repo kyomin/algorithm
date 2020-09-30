@@ -18,6 +18,9 @@ int solution(int a, int b) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int T;
 	cin >> T;
 
