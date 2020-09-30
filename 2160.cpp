@@ -17,13 +17,10 @@ vector<int> vc;
 void comp(int one, int two) {
 	int diff = 0;	// 몇 개의 차이가 있는지 센다.
 
-	for (int row = 0; row < 5; row++) {
-		for (int col = 0; col < 7; col++) {
-			if (pictures[one][row][col] != pictures[two][row][col]) {
+	for (int row = 0; row < 5; row++)
+		for (int col = 0; col < 7; col++)
+			if (pictures[one][row][col] != pictures[two][row][col])
 				diff++;
-			}
-		}
-	}
 
 	if (minDiff >= diff) {
 		minDiff = diff;
@@ -54,15 +51,15 @@ void dfs(int cnt) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
 
-	for (int i = 0; i < N; i++) {
-		for (int row = 0; row < 5; row++) {
-			for (int col = 0; col < 7; col++) {
+	for (int i = 0; i < N; i++)
+		for (int row = 0; row < 5; row++)
+			for (int col = 0; col < 7; col++)
 				cin >> pictures[i][row][col];
-			}
-		}
-	}
 
 	dfs(0);
 
