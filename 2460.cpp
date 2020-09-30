@@ -4,6 +4,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int ans = 0;
 	int passengers = 0;
 
