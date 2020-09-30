@@ -33,8 +33,10 @@ void dfs(int curr) {
 }
 
 int main() {
-	int N;
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
 
+	int N;
 	cin >> N;
 
 	for (int i = 1; i <= N; i++) {
@@ -44,10 +46,9 @@ int main() {
 		S[i] = n;
 	}
 
-	for (int i = 1; i <= N; i++) {
+	for (int i = 1; i <= N; i++)
 		if (!visited[i])
 			dfs(i);
-	}
 
 	// 크기 순으로 정렬
 	sort(result.begin(), result.end());
