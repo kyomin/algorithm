@@ -3,6 +3,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	unsigned int sum = 0;
 
 	for (int i = 0; i < 5; i++) {
