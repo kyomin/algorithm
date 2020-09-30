@@ -5,6 +5,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N;
 	cin >> N;
 
@@ -45,21 +48,16 @@ int main() {
 		}
 
 		// 경우의 수를 판단한다.
-		if (same4 == 1) {
+		if (same4 == 1)
 			prize = 50000 + (idx4[0] * 5000);
-		}
-		else if (same3 == 1) {
+		else if (same3 == 1)
 			prize = 10000 + (idx3[0] * 1000);
-		}
-		else if (same2 == 2) {
+		else if (same2 == 2)
 			prize = 2000 + (idx2[0] * 500) + (idx2[1] * 500);
-		} 
-		else if (same2 == 1) {
+		else if (same2 == 1)
 			prize = 1000 + (idx2[0] * 100);
-		} 
-		else {
+		else
 			prize = idx1[3] * 100;
-		}
 
 		ans = max(ans, prize);
 	}
