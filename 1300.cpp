@@ -18,9 +18,6 @@ ll findIndex(ll mid) {
 }
 
 int main() {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
-
 	cin >> N >> K;
 
 	// 가질 수 있는 값의 범위는 1 ~ N*N
