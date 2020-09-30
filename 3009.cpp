@@ -3,14 +3,16 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int x[3];
 	int y[3];
 
 	int x4, y4;
 
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 3; i++)
 		cin >> x[i] >> y[i];
-	}
 
 	if (x[0] == x[1])
 		x4 = x[2];
