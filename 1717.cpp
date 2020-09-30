@@ -48,12 +48,10 @@ int main() {
 		}
 		else {
 			// 속해있는 집합의 root가 같다면 같은 집합에 속해있다는 것이다.
-			if (Find(a) == Find(b)) {
+			if (Find(a) == Find(b))
 				cout << "YES" << '\n';
-			}
-			else {
+			else
 				cout << "NO" << '\n';
-			}
 		}
 	}
 
