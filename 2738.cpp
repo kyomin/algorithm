@@ -7,6 +7,9 @@ int B[101][101];
 int result[101][101];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N, M;
 	cin >> N >> M;
 
