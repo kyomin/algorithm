@@ -19,14 +19,11 @@ int main() {
 		history[history1][history2] = 1;
 	}
 
-	for (int k = 1; k <= N; k++) {
-		for (int i = 1; i <= N; i++) {
-			for (int j = 1; j <= N; j++) {
+	for (int k = 1; k <= N; k++)
+		for (int i = 1; i <= N; i++)
+			for (int j = 1; j <= N; j++)
 				if (history[i][k] && history[k][j])
 					history[i][j] = 1;
-			}
-		}
-	}
 
 	cin >> S;
 
