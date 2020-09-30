@@ -29,6 +29,9 @@ int numOfBits(int len, int total, int bit) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int T;
 	cin >> T;
 
