@@ -1,62 +1,60 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
-string words[50];
-bool isPrefix[50][50];
-int N;
+// 길이 순 내림차 정렬
+bool comp(const string &s1, const string &s2) {
+	if (s1.size() > s2.size())
+		return true;
+	else
+		return false;
+}
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
+	int N;
 	cin >> N;
 
-	for (int i = 0; i < N; i++) {
-		cin >> words[i];
+	vector<string> strings;
+	vector<string> ans;
+
+	for (int n = 0; n < N; n++) {
+		string s;
+		cin >> s;
+
+		strings.push_back(s);
 	}
 
-	for (int i = 0; i < N; i++) {
-		// 현재 기준 단어
-		string curWord = words[i];
-
-		for (int j = 0; j < N; j++) {
-			if (i == j)
-				continue;
-
-			// 비교 대상
-			string compareWord = words[j];
-
-			// 길이가 길면 접두사가 될 수 없으므로
-			if (curWord.size() > compareWord.size())
-				continue;
-
-			int len = curWord.size();
-
-			// 접두사가 되는 경우
-			if (curWord == compareWord.substr(0, len))
-				isPrefix[i][j] = true;
-		}
-	}
-
-	int ans = 0;
+	sort(strings.begin(), strings.end(), comp);
 
 	for (int i = 0; i < N; i++) {
-		int cnt = 0;
-
-		for (int j = 0; j < N; j++) {
-			if (i == j)
-				continue;
-
-			// 접두사가 아니라면
-			if (!isPrefix[i][j])
-				cnt++;
+		// 가장 긴 것은 일단 넣는다.
+		if (i == 0) {
+			ans.push_back(strings[i]);
+			continue;
 		}
 
-		// 현재 단어가 다른 모든 단어의 접두사가 아닌 경우
-		if (cnt == N - 1)
-			ans++;
+		string s = strings[i];
+		int len = ans.size();
+		bool isHead = false;
+
+		for (int j = 0; j < len; j++) {
+			if (ans[j].substr(0, s.size()) == s) {
+				isHead = true;
+				break;
+			}
+		}
+
+		if (!isHead)
+			ans.push_back(s);
 	}
 
-	cout << ans << '\n';
+	cout << ans.size() << '\n';
 
 	return 0;
 }
