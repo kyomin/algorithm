@@ -4,55 +4,44 @@
 
 using namespace std;
 
+int N;
+vector<pair<int, string>> records;	// first : 시간, second : 해당 시간의 문자열 상태
+
+// 되돌린 과거 시점의 문자열 반환
+string get_past(int target_sec) {
+	for (int i = records.size() - 1; i >= 0; i--)
+		if (target_sec > records[i].first)
+			return records[i].second;
+
+	return "";
+}
+
 int main() {
-	int N;
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
-
-	vector<string> status;
-	status.push_back("");
-
-	int prevTime = 0;
-
 	for (int n = 0; n < N; n++) {
-		string command, val;
-		int time;
+		string cmd, val;
+		int sec;
 
-		cin >> command >> val >> time;
+		cin >> cmd >> val >> sec;
 
-		if (command == "type") {
-			// 이전 상태 추출
-			string prevStatus = status[prevTime];
-			
-			// 현재 상태 갱신
-			string curStatus = prevStatus + val;
+		if (cmd == "type") {
+			string push_val;
 
-			// 중간에 명령이 없는 시간까지 고려
-			for (int i = prevTime; i < time-1; i++) {
-				status.push_back(prevStatus);
-			}
+			if (records.size())
+				push_val = records.back().second + val;
+			else
+				push_val = val;
 
-			status.push_back(curStatus);
-
-			prevTime = time;
+			records.push_back({ sec, push_val });
 		}
-		else {
-			// 이전 상태 추출
-			string prevStatus = status[prevTime];
-
-			// 중간에 명령이 없는 시간까지 고려
-			for (int i = prevTime; i < time - 1; i++) {
-				status.push_back(prevStatus);
-			}
-
-			// 현재 상태 갱신
-			string curStatus = status[time - atoi(val.c_str()) - 1];
-			status.push_back(curStatus);
-
-			prevTime = time;
-		}
+		else
+			records.push_back({ sec, get_past(sec - atoi(val.c_str())) });
 	}
 
-	cout << status[prevTime] << '\n';
+	cout << records.back().second << '\n';
 
 	return 0;
 }
