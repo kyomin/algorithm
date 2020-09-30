@@ -35,10 +35,9 @@ int main() {
 			diff = abs(results[i] - 100);
 			ans = results[i];
 		}
-		else if (diff == abs(results[i] - 100)) {
+		else if (diff == abs(results[i] - 100))
 			if (results[i] > ans)
 				ans = results[i];
-		}
 	}
 
 	cout << ans << '\n';
