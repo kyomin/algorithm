@@ -5,6 +5,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int ans = 0;
 	int N, M;
 	vector<int> plusPos;
@@ -35,39 +38,33 @@ int main() {
 		if (plusPos[plusPosLen - 1] > minusPos[minusPosLen - 1]) {
 			ans += plusPos[plusPosLen - 1];
 
-			for (int i = plusPosLen - 1 - M; i >= 0; i -= M) {
+			for (int i = plusPosLen - 1 - M; i >= 0; i -= M)
 				ans += plusPos[i] * 2;
-			}
 
-			for (int i = minusPosLen - 1; i >= 0; i -= M) {
+			for (int i = minusPosLen - 1; i >= 0; i -= M)
 				ans += minusPos[i] * 2;
-			}
 		}
 		else {
 			ans += minusPos[minusPosLen - 1];
 
-			for (int i = plusPosLen - 1; i >= 0; i -= M) {
+			for (int i = plusPosLen - 1; i >= 0; i -= M)
 				ans += plusPos[i] * 2;
-			}
 
-			for (int i = minusPosLen - 1 - M; i >= 0; i -= M) {
+			for (int i = minusPosLen - 1 - M; i >= 0; i -= M)
 				ans += minusPos[i] * 2;
-			}
 		}
 	}
 	else if (plusPosLen != 0 && minusPosLen == 0) {
 		ans += plusPos[plusPosLen - 1];
 
-		for (int i = plusPosLen - 1 - M; i >= 0; i -= M) {
+		for (int i = plusPosLen - 1 - M; i >= 0; i -= M)
 			ans += plusPos[i] * 2;
-		}
 	}
 	else if (plusPosLen == 0 && minusPosLen != 0) {
 		ans += minusPos[minusPosLen - 1];
 
-		for (int i = minusPosLen - 1 - M; i >= 0; i -= M) {
+		for (int i = minusPosLen - 1 - M; i >= 0; i -= M)
 			ans += minusPos[i] * 2;
-		}
 	}
 
 	cout << ans << '\n';
