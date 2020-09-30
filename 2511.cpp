@@ -10,13 +10,11 @@ int main() {
 	cin.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 10; i++)
 		cin >> resultA[i];
-	}
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 10; i++)
 		cin >> resultB[i];
-	}
 
 	for (int i = 0; i < 10; i++) {
 		if (resultA[i] > resultB[i]) {
