@@ -12,10 +12,12 @@ typedef struct light {
 bool isTrafficLights[1001];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	queue<Light> trafficLights;
 
 	int N, L;
-
 	cin >> N >> L;
 
 	for (int i = 0; i < N; i++) {
