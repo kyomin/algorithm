@@ -8,6 +8,9 @@ int dp[1001];
 int N;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
 	
 	for (int n = 1; n <= N; n++) {
