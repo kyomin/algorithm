@@ -25,24 +25,25 @@ int ans = 0;
 
 // 내림차순 정렬
 bool cmp(const pair<char, int> &p1, const pair<char, int> &p2) {
-	if (p1.second > p2.second) {
+	if (p1.second > p2.second)
 		return true;
-	} else {
+	else
 		return false;
-	}
 }
 
 // 정수형 pow 정의 (a^b)
 int pow(int a, int b) {
-	if (b == 0) {
+	if (b == 0)
 		return 1;
-	}
 
 	return a * pow(a, b - 1);
 }
 
 // 순열을 이용해 최댓값 찾기!
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N;
 	cin >> N;
 
