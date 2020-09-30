@@ -6,6 +6,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	for (int t = 0; t < 3; t++) {
 		string str;
 		vector<int> v;
