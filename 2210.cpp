@@ -29,16 +29,17 @@ void dfs(int y, int x, string str) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	// 숫자판 입력
 	for (int y = 0; y < 5; y++)
 		for (int x = 0; x < 5; x++)
 			cin >> board[y][x];
 
-	for (int y = 0; y < 5; y++) {
-		for (int x = 0; x < 5; x++) {
+	for (int y = 0; y < 5; y++)
+		for (int x = 0; x < 5; x++)
 			dfs(y, x, to_string(board[y][x]));
-		}
-	}
 
 	cout << results.size() << '\n';
 
