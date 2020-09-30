@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -13,23 +14,27 @@ int moveKnightC[8] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 int moveQueenR[8] = { -1, -1, 0, 1, 1, 1, 0, -1 };
 int moveQueenC[8] = { 0, 1, 1, 1, 0, -1, -1, -1 };
 
-
 int R, C;
+
+// 범위 내에 있는가?
+bool isInside(int r, int c) {
+	if (1 <= r && r <= R && 1 <= c && c <= C)
+		return true;
+	else
+		return false;
+}
 
 // 나이트 움직이기
 void moveKnight(int r, int c) {
 	for (int k = 0; k < 8; k++) {
-		int nr = moveKnightR[k];
-		int nc = moveKnightC[k];
+		int nr = r + moveKnightR[k];
+		int nc = c + moveKnightC[k];
 
-		// 범위 내에 있다면
-		if (1 <= nr && nr <= R && 1 <= nc && nc <= C) {
-			// 그리고 그 자리에 다른 말이 없다면
-			if (board[nr][nc] == 'E') {
-				// 안전하지 않다고 표시!
-				isSafe[nr][nc] = false;
-			}
-		}
+		if (!isInside(nr, nc)) continue;
+
+		if (board[nr][nc] != 'E') continue;
+
+		isSafe[nr][nc] = false;
 	}
 }
 
@@ -38,35 +43,26 @@ void moveQueen(int r, int c, int where) {
 	int nr = r + moveQueenR[where];
 	int nc = c + moveQueenC[where];
 
-	// 범위 내에 있다면
-	if (1 <= nr && nr <= R && 1 <= nc && nc <= C) {
-		// 그리고 그 자리에 다른 말이 없다면
-		if (board[nr][nc] == 'E') {
-			// 안전하지 않다고 표시!
-			isSafe[nr][nc] = false;
-		}
-		else {
-			return;
-		}
-	}
-	else {
-		return;
-	}
+	while (true) {
+		if (!isInside(nr, nc)) break;
+		if (board[nr][nc] != 'E') break;
 
-	moveQueen(nr, nc, where);
+		isSafe[nr][nc] = false;
+
+		nr += moveQueenR[where];
+		nc += moveQueenC[where];
+	}
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
+	memset(isSafe, true, sizeof(isSafe));
+	memset(board, 'E', sizeof(board));
 	int Q, K, P;
 
 	cin >> R >> C;
-
-	for (int r = 1; r <= R; r++) {
-		for (int c = 1; c <= C; c++) {
-			isSafe[r][c] = true;	// 일단 다 안전하다고 표기
-			board[r][c] = 'E';		// 빈 곳 : E라고 표기
-		}
-	}
 
 	// 퀸 입력!
 	cin >> Q;
@@ -104,9 +100,9 @@ int main() {
 			}
 
 			if (board[r][c] == 'Q') {
-				for (int k = 0; k < 8; k++) {
+				for (int k = 0; k < 8; k++)
 					moveQueen(r, c, k);
-				}
+
 				continue;
 			}
 		}
@@ -114,12 +110,10 @@ int main() {
 
 	int ans = 0;
 
-	for (int r = 1; r <= R; r++) {
-		for (int c = 1; c <= C; c++) {
+	for (int r = 1; r <= R; r++)
+		for (int c = 1; c <= C; c++)
 			if (isSafe[r][c])
 				ans++;
-		}
-	}
 
 	cout << ans << '\n';
 
