@@ -9,6 +9,9 @@ const int INF = 1000000000;
 int dist[1001][1001];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N, M, X;
 	cin >> N >> M >> X;
 
