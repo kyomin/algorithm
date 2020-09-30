@@ -68,6 +68,9 @@ int bfs() {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> R >> C;
 
 	for (int r = 0; r < R; r++)
