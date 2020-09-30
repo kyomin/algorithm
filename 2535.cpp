@@ -23,9 +23,6 @@ bool comp(const StudentInfo &studentInfo1, const StudentInfo &studentInfo2) {
 }
 
 int main() {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
-
 	cin >> N;
 
 	for (int n = 0; n < N; n++) {
