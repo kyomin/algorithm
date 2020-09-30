@@ -8,9 +8,6 @@ int arr[100001];
 const int INF = numeric_limits<int>::max();
 
 int main() {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
-
 	int N, S;
 	int length = INF;
 	int low = 0;
