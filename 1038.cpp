@@ -33,6 +33,9 @@ void preCalculate() {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
 
 	// 1 ~ 9는 이미 감소하는 수
