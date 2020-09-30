@@ -21,6 +21,9 @@ void dfs(int node) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N, M;
 	cin >> N >> M;
 
@@ -48,10 +51,9 @@ int main() {
 
 	int cnt = 0;
 	
-	for (int node = 1; node <= N; node++) {
+	for (int node = 1; node <= N; node++)
 		if (connectedNodes[node].size() == N)
 			cnt++;
-	}
 
 	cout << cnt << '\n';
 	
