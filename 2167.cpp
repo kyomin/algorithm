@@ -12,11 +12,9 @@ int main() {
 
 	cin >> N >> M;
 
-	for (int row = 1; row <= N; row++) {
-		for (int col = 1; col <= M; col++) {
+	for (int row = 1; row <= N; row++)
+		for (int col = 1; col <= M; col++)
 			cin >> arr[row][col];
-		}
-	}
 
 	cin >> K;
 
@@ -26,11 +24,9 @@ int main() {
 
 		int sum = 0;
 
-		for (int row = i; row <= x; row++) {
-			for (int col = j; col <= y; col++) {
+		for (int row = i; row <= x; row++)
+			for (int col = j; col <= y; col++)
 				sum += arr[row][col];
-			}
-		}
 
 		cout << sum << '\n';
 	}
