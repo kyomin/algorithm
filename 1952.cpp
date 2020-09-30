@@ -21,9 +21,8 @@ void dfs(int y, int x) {
 	map[y][x] = true;
 
 	// 끝에 도달했다면
-	if (visitedRoom == totalRoom) {
+	if (visitedRoom == totalRoom)
 		return;
-	}
 
 	int nx = x + dx[curDir];
 	int ny = y + dy[curDir];
@@ -45,6 +44,9 @@ void dfs(int y, int x) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> M >> N;
 	totalRoom = M * N;
 
