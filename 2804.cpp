@@ -7,6 +7,9 @@ using namespace std;
 char board[30][30];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	memset(board, '.', sizeof(board));
 
 	string A, B;
@@ -33,13 +36,11 @@ int main() {
 		}
 	}
 
-	for (int col = 0; col < lenA; col++) {
+	for (int col = 0; col < lenA; col++)
 		board[i][col] = A[col];
-	}
 
-	for (int row = 0; row < lenB; row++) {
+	for (int row = 0; row < lenB; row++)
 		board[row][j] = B[row];
-	}
 
 	for (int row = 0; row < lenB; row++) {
 		for (int col = 0; col < lenA; col++)
