@@ -8,6 +8,9 @@ vector<int> operands;
 string expression;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> expression;
 
 	int len = expression.size();
@@ -45,9 +48,8 @@ int main() {
 	len = operands.size();
 	int result = operands[0];
 
-	for (int i = 1; i < len; i++) {
+	for (int i = 1; i < len; i++)
 		result -= operands[i];
-	}
 
 	cout << result << '\n';
 
