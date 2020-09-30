@@ -56,9 +56,6 @@ int bfs(string arr) {
 }
 
 int main() {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
-
 	cin >> N >> K;
 	string arr = "";
 
