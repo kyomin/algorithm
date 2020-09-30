@@ -3,23 +3,13 @@
 using namespace std;
 
 int main() {
-	int ascend, descend, length;
-	cin >> ascend >> descend >> length;
+	int day;
+	int A, B, V;
+	cin >> A >> B >> V;
 
-	if (ascend > length) {
-		cout << 1 << '\n';
-		return 0;
-	}
+	day = (V - B - 1) / (A - B) + 1;
 
-	int remainder = length % (ascend - descend);
-	int quotient = length / (ascend - descend);
-
-	if (remainder != 0) {
-		cout << quotient + 1 << '\n';
-	}
-	else {
-		cout << quotient - 1 << '\n';
-	}
+	cout << day << '\n';
 
 	return 0;
 }
