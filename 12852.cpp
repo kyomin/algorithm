@@ -7,6 +7,9 @@ int dp[1000001];
 int before[1000001];	// 역 추적을 담기 위한 배열
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	before[1] = -1;
 	cin >> N;
 
