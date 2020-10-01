@@ -24,8 +24,8 @@ void merge()
 	while (j < M) ans[k++] = B[j++];
 }
 
-int main()
-{
+int main() {
+	cin.tie(NULL);
 	ios::sync_with_stdio(false);
 
 	cin >> N >> M;
@@ -37,9 +37,9 @@ int main()
 
 	merge();
 
-	for (int i = 0; i < length; i++)
-	{
-		cout << ans[i]; if (i != length - 1) cout << " ";
+	for (int i = 0; i < length; i++) {
+		cout << ans[i]; 
+		if (i != length - 1) cout << " ";
 	}
 
 	cout << "\n";
