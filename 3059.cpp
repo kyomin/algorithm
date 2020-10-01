@@ -29,10 +29,9 @@ int main() {
 
 		int sum = 0;
 
-		for (int i = 0; i < 26; i++) {
+		for (int i = 0; i < 26; i++)
 			if (!alphas[i])
 				sum += (i + 65);
-		}
 
 		cout << sum << '\n';
 	}
