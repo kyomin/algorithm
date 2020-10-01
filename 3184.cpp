@@ -63,12 +63,10 @@ int main() {
 	for (int r = 0; r < R; r++)
 		cin >> map[r];
 
-	for (int r = 0; r < R; r++) {
-		for (int c = 0; c < C; c++) {
+	for (int r = 0; r < R; r++)
+		for (int c = 0; c < C; c++)
 			if (map[r][c] != '#' && !check[r][c])
 				bfs(r, c);
-		}
-	}
 
 	cout << totalSheep << ' ' << totalWolf << '\n';
 
