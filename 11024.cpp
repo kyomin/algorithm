@@ -18,6 +18,9 @@ vector<string> split(string str, char delimiter) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int T;
 	cin >> T;
 
@@ -34,9 +37,8 @@ int main() {
 
 		int len = nums.size();
 
-		for (int i = 0; i < len; i++) {
+		for (int i = 0; i < len; i++)
 			ans += atoi(nums[i].c_str());
-		}
 
 		cout << ans << '\n';
 	}
