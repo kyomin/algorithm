@@ -52,6 +52,9 @@ int hexToDecimal(string num) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	string num;
 	cin >> num;
 
@@ -62,12 +65,10 @@ int main() {
 	}
 
 	// 8진수인 경우
-	if (num.substr(0, 2) != "0x") {
+	if (num.substr(0, 2) != "0x")
 		cout << octToDecimal(num.substr(1, num.size())) << '\n';
-	}
-	else {
+	else
 		cout << hexToDecimal(num.substr(2, num.size())) << '\n';
-	}
 
 	return 0;
 }
