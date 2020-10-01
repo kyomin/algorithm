@@ -4,6 +4,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int T;
 	cin >> T;
 
@@ -16,10 +19,9 @@ int main() {
 		
 		int cnt = 0;
 
-		for (int i = 0; i < len; i++) {
+		for (int i = 0; i < len; i++)
 			if (s1[i] != s2[i])
 				cnt++;
-		}
 
 		cout << "Hamming distance is " << cnt << '.' << '\n';
 	}
