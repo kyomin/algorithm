@@ -18,6 +18,10 @@ vector<string> split(string str, char delimiter) {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	string str;
 	getline(cin, str);
 
@@ -26,10 +30,9 @@ int main() {
 	int len = nums.size();
 	int cnt = 0;
 
-	for (int i = 0; i < len; i++) {
+	for (int i = 0; i < len; i++)
 		if(atoi(nums[i].c_str()) > 0)
 			cnt++;
-	}
 
 	cout << cnt << '\n';
 
