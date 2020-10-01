@@ -5,9 +5,6 @@
 using namespace std;
 
 int main() {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
-	
 	deque<int> q;
 	int N;
 	cin >> N;
