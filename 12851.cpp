@@ -52,6 +52,9 @@ int minSecond(int N, int K) {
 }
 
 int main(void) {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N, K;
 	cin >> N >> K;
 
