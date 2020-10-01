@@ -49,6 +49,10 @@ void go(int curVal, int nextOperandIdx, char curOperator,
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int plusCnt, subCnt, mulCnt, divCnt;
 
 	cin >> N;
