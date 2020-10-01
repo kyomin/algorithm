@@ -105,8 +105,8 @@ int main() {
 	cin.tie(NULL);
 	ios::sync_with_stdio(false);
 
-	int rx = 0, ry = 0, bx = 0, by = 0;
 	cin >> R >> C;
+	int rx = 0, ry = 0, bx = 0, by = 0;
 
 	for (int x = 0; x < R; x++) {
 		for (int y = 0; y < C; y++) {
