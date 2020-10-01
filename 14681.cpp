@@ -3,8 +3,11 @@
 using namespace std;
 
 int main() {
-	int x, y;
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
 
+	int x, y;
 	cin >> x >> y;
 
 	if (x > 0 && y > 0)
