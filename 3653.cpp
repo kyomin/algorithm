@@ -87,9 +87,8 @@ int main() {
 		arr.resize(N + M);
 		idx.resize(N);
 
-		for (int i = 0; i < M; i++) {
+		for (int i = 0; i < M; i++)
 			arr[i] = 0;
-		}
 
 		for (int i = M, j = 0; i < M + N; i++, j++) {
 			arr[i] = 1;
