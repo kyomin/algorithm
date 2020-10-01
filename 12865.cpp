@@ -34,20 +34,21 @@ void solution(int curr) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N >> K;
 
-	for (int i = 0; i < N; i++) {
+	for (int i = 0; i < N; i++)
 		cin >> things[i].first >> things[i].second;
-	}
 
 	memset(dp, -1, sizeof(dp));
 	dp[0] = 0;
 
 	solution(0);
 
-	for (int i = 0; i <= K; i++) {
+	for (int i = 0; i <= K; i++)
 		ans = max(ans, dp[i]);
-	}
 
 	cout << ans << '\n';
 
