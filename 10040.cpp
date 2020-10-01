@@ -7,16 +7,17 @@ int B[1001];
 int voted[1001];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N, M;
 	cin >> N >> M;
 
-	for (int i = 1; i <= N; i++) {
+	for (int i = 1; i <= N; i++)
 		cin >> A[i];
-	}
 
-	for (int i = 1; i <= M; i++) {
+	for (int i = 1; i <= M; i++)
 		cin >> B[i];
-	}
 
 	for (int i = 1; i <= M; i++) {
 		for (int j = 1; j <= N; j++) {
