@@ -7,13 +7,15 @@ int B[101];
 int N;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
 
 	int sum = 0;
 
-	for (int i = 1; i <= N; i++) {
+	for (int i = 1; i <= N; i++)
 		cin >> B[i];
-	}
 
 	for (int i = 1; i <= N; i++) {
 		A[i] = B[i] * i - sum;
@@ -21,11 +23,10 @@ int main() {
 		sum += A[i];
 	}
 
-	for (int i = 1; i <= N; i++) {
+	for (int i = 1; i <= N; i++)
 		cout << A[i] << ' ';
-	}
 
-	cout << endl;
+	cout << '\n';
 
 	return 0;
 }
