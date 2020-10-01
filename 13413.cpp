@@ -22,6 +22,9 @@ int solution(string init, string target, int len) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int T;
 	cin >> T;
 
