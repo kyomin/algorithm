@@ -3,6 +3,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	for (int i = 0; i < 3; i++) {
 		int start_h, start_m, start_s;
 		int end_h, end_m, end_s;
