@@ -17,9 +17,8 @@ void dfs() {
 	if (vc.size() == k) {
 		string result = "";
 
-		for (auto num : vc) {
+		for (auto num : vc)
 			result += to_string(num);
-		}
 
 		results.insert(result);
 
@@ -40,6 +39,9 @@ void dfs() {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> n >> k;
 
 	for (int i = 0; i < n; i++)
