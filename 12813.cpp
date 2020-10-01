@@ -64,8 +64,10 @@ string notOper(string str) {
 }
 
 int main() {
-	string A, B;
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
 
+	string A, B;
 	cin >> A >> B;
 
 	cout << andOper(A, B) << '\n';
