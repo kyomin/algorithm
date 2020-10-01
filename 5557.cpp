@@ -8,6 +8,9 @@ typedef long long ll;
 ll d[100][21];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int n;
 	cin >> n;
 	n -= 1;		// 마지막 수는 따로 입력받기 위해 1을 빼줌.
