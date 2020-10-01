@@ -1,61 +1,104 @@
 #include <iostream>
+#include <queue>
+#include <vector>
 #include <string>
+#include <algorithm>
+#include <map>
+#define MAX 11
 
 using namespace std;
 
-int n, k;
+int N, K;
+int dp[MAX] = { 0, };
 
-int cnt = 0;
+vector<string> ans;
 
-string result;
-bool found;
+// 경우의 수 덧셈 찾기
+void find() {
+	queue<string> q;	// 탐색할 숫자를 저장할 공간
+	map<string, bool> mp;	// 방문 여부
 
-void go(int curVal, int operand, string expression) {
-	// 다른 곳에서 해답을 찾았으면 더 찾을 필요가 없다.
-	if (found)
-		return;
-	
-	if ((curVal + operand) == n) {
-		expression = expression + "+" + to_string(operand);
-		cnt++;
+	// 처음엔 1, 2, 3을 넣고 방문 처리
+	q.push("1");
+	q.push("2");
+	q.push("3");
+	mp["1"] = true;
+	mp["2"] = true;
+	mp["3"] = true;
 
-		if (cnt == k) {
-			result = expression;
-			found = true;
+	while (!q.empty()) {
+		int sum = 0;	// 현재까지 뽑은 원소의 합
+
+		// 맨 앞의 원소를 뽑고 삭제
+		string s = q.front();
+		q.pop();
+
+		// 현재까지 뽑은 숫자를 더한다.
+		for (int i = 0; i < s.size(); i++)
+			sum += (int)(s[i] - '0');
+
+		// 현재까지 뽑은 숫자가 N인 경우 벡터에 삽입
+		if (sum == N) {
+			ans.push_back(s);
+			continue;
 		}
 
-		return;
+		// 현재까지 뽑은 숫자의 합의 길이가 N보다 긴 경우는 무시
+		if (s.size() > N)
+			continue;
+
+		// 문제의 숫자는 1, 2, 3으로 이루어짐. 각 경로를 탐색
+		for (int i = 1; i <= 3; i++) {
+			// 길이가 N이면 더 이상 더해도 N보다 커짐은 당연하니까 무시
+			if (s.size() == N)
+				continue;
+
+			string temp = s;
+
+			// 숫자의 끝에 i를 삽입
+			temp += (char)('0' + i);
+
+			if (mp.find(temp) == mp.end()) {	// 방문하지 않은 숫자면
+				q.push(temp);	// 큐에 넣고
+				mp[temp] = true;	// 방문 처리
+			}
+		}
 	}
-
-	if ((curVal + operand) > n)
-		return;
-
-	expression = expression + "+" + to_string(operand);
-
-	go((curVal + operand), 1, expression);
-	go((curVal + operand), 2, expression);
-	go((curVal + operand), 3, expression);
 }
 
 int main() {
-	cin >> n >> k;
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
 
-	go(1, 1, "1");
-	go(1, 2, "1");
-	go(1, 3, "1");
+	cin >> N >> K;
 
-	go(2, 1, "2");
-	go(2, 2, "2");
-	go(2, 3, "2");
+	// 10까지의 더하기 가짓수 찾기
+	dp[1] = 1;
+	dp[2] = 2;
+	dp[3] = 4;
 
-	go(3, 1, "3");
-	go(3, 2, "3");
-	go(3, 3, "3");
+	for (int i = 4; i <= 10; i++)
+		dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
 
-	if (found)
-		cout << result << '\n';
-	else
+	// N을 만들 수 있는 경우의 수보다 많은 수를 물어보면
+	if (dp[N] < K) {
 		cout << -1 << '\n';
+		return 0;
+	}
+
+	// N을 만들 수 있는 경우의 수 안에서 물어보면
+	find();		// 숫자를 찾는다.
+	sort(ans.begin(), ans.end());	// 오름차순 정렬
+
+	// N을 만든 K번째 식을 +를 포함하여 출력
+	for (int i = 0; i < ans[K - 1].size(); i++) {
+		cout << ans[K - 1][i];
+
+		if (i == ans[K - 1].size() - 1)
+			break;
+
+		cout << "+";
+	}
 
 	return 0;
 }
