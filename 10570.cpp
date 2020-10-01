@@ -23,6 +23,9 @@ bool comp(const pair<int, int> &p1, const pair<int, int> &p2) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int T;
 	cin >> T;
 
@@ -42,9 +45,8 @@ int main() {
 
 		for (int i = 1; i <= 1000; i++) {
 			// 투표가 한 번이라도 되었다면
-			if (numbers[i] != 0) {
+			if (numbers[i] != 0)
 				results.push_back(make_pair(i, numbers[i]));
-			}
 		}
 
 		sort(results.begin(), results.end(), comp);
