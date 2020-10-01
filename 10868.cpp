@@ -7,30 +7,20 @@ using namespace std;
 int N, M;
 
 long long arr[100001];
-
 long long *min_tree;
-
 long long tree_size;
 
-
-void calc_size()
-{
+void calc_size() {
 	int h = (int)ceil(log2(N));
-
 	tree_size = (1 << (h + 1));
-
 	min_tree = new long long[tree_size + 1];
 }
 
-
 // 구간 최솟값을 담는 세그먼트 트리 초기화
-long long init_min(int node, int start, int end)
-{
+long long init_min(int node, int start, int end) {
 	// 단말 노드라면
 	if (start == end)
-	{
 		return min_tree[node] = arr[start];
-	}
 
 	int mid = (start + end) / 2;
 
@@ -43,20 +33,14 @@ long long init_min(int node, int start, int end)
 
 
 // 구간 최솟값을 구한다.
-long long search_min(int L, int R, int nodeNum, int nodeL, int nodeR)
-{
+long long search_min(int L, int R, int nodeNum, int nodeL, int nodeR) {
 	// 구간 밖이라면(전혀 안 겹친다면)
 	if (R < nodeL || nodeR < L)
-	{
-		// 가장 큰 값을 리턴해 최솟값에 영향 주지 않는다.
-		return 1000000001;
-	}
+		return 1000000001;	// 가장 큰 값을 리턴해 최솟값에 영향 주지 않는다.
 
 	// 완전히 포함되는 구간 내라면
 	if (L <= nodeL && nodeR <= R)
-	{
 		return min_tree[nodeNum];
-	}
 
 	int mid = (nodeL + nodeR) / 2;
 
@@ -66,24 +50,20 @@ long long search_min(int L, int R, int nodeNum, int nodeL, int nodeR)
 	);
 }
 
-int main()
-{
+int main() {
 	cin.tie(NULL);
 	ios::sync_with_stdio(false);
 
 	cin >> N >> M;
 
 	for (int i = 0; i < N; i++)
-	{
 		cin >> arr[i];
-	}
 
 	calc_size();
 
 	init_min(1, 0, N - 1);
 
-	for (int i = 0; i < M; i++)
-	{
+	for (int i = 0; i < M; i++) {
 		int a, b;
 		cin >> a >> b;
 
