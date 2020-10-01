@@ -8,13 +8,16 @@ using namespace std;
 const int INF = 1000000000;
 
 int friends[301][301];
-
 int N;
 
 // first : 시작점, second : 끝점
 vector<pair<int, int>> lines;
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
 
 	for (int y = 1; y <= N; y++)
@@ -65,12 +68,10 @@ int main() {
 		int A, B;
 		cin >> A >> B;
 
-		if (friends[A][B] == INF) {
+		if (friends[A][B] == INF)
 			cout << -1 << '\n';
-		}
-		else {
+		else
 			cout << friends[A][B] << '\n';
-		}
 	}
 
 	return 0;
