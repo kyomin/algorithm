@@ -7,6 +7,10 @@ int cows[101];
 int N;
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	memset(cows, -1, sizeof(cows));
 	
 	cin >> N;
@@ -28,7 +32,7 @@ int main() {
 		}
 	}
 
-	cout << ans << endl;
+	cout << ans << '\n';
 
 	return 0;
 }
