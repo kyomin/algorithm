@@ -10,6 +10,9 @@ double calcDiagonal(double W, double H) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	double N, W, H, diagonal;
 	cin >> N >> W >> H;
 
@@ -19,12 +22,10 @@ int main() {
 		double match;
 		cin >> match;
 
-		if (match <= W || match <= H || match <= diagonal) {
+		if (match <= W || match <= H || match <= diagonal)
 			cout << "DA" << '\n';
-		}
-		else {
+		else
 			cout << "NE" << '\n';
-		}
 	}
 
 	return 0;
