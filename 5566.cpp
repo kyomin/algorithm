@@ -9,11 +9,13 @@ int board[1001];
 queue<int> dice;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N >> M;
 
-	for (int i = 1; i <= N; i++) {
+	for (int i = 1; i <= N; i++)
 		cin >> board[i];
-	}
 
 	for (int i = 0; i < M; i++) {
 		int n;
