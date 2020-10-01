@@ -12,6 +12,9 @@ int dr[4] = { 0, 1, 0, -1 };
 int R, C;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int targetR, targetC;
 	cin >> R >> C;
 
