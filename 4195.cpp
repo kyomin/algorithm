@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int friends[200001];						// 친구들의 부모 노드를 담는다.
+int friends[200001];	// 친구들의 부모 노드를 담는다.
 
 void init() {
 	for (int i = 1; i <= 200000; i++)
@@ -13,9 +13,8 @@ void init() {
 
 int Find(int x) {
 	// root인 경우 x를 반환
-	if (x == friends[x]) {
+	if (x == friends[x])
 		return x;
-	}
 	else {
 		int p = Find(friends[x]);
 		friends[x] = p;
@@ -60,9 +59,8 @@ int main() {
 				n1 = cur_node;
 				cur_node++;
 			}
-			else {
+			else
 				n1 = friend_node[f1];
-			}
 
 			// f2이 처음 등장한 친구라면
 			if (friend_node.find(f2) == friend_node.end()) {
@@ -70,9 +68,8 @@ int main() {
 				n2 = cur_node;
 				cur_node++;
 			}
-			else {
+			else
 				n2 = friend_node[f2];
-			}
 				
 			Union(n1, n2);
 
@@ -82,10 +79,9 @@ int main() {
 			int friends_num = friend_node.size();
 			int cnt = 0;
 
-			for (int num = 1; num <= friends_num; num++) {
+			for (int num = 1; num <= friends_num; num++)
 				if (Find(num) == cur_set)
 					cnt++;
-			}
 
 			cout << cnt << '\n';
 		}
