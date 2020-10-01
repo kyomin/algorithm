@@ -5,6 +5,9 @@ using namespace std;
 int scoreBoard[200][3];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N;
 	cin >> N;
 
