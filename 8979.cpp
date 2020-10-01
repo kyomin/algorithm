@@ -33,6 +33,9 @@ bool comp(const Info &info1, const Info &info2) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N, K;
 	vector<Info> countries;
 
