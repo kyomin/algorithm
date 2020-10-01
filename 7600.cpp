@@ -9,10 +9,9 @@ bool alpha[26];
 void solution() {
 	int cnt = 0;
 
-	for (int i = 0; i < 26; i++) {
+	for (int i = 0; i < 26; i++)
 		if (alpha[i])
 			cnt++;
-	}
 
 	cout << cnt << '\n';
 }
