@@ -14,9 +14,9 @@ bool check[100][100][100];
 
 int R, C, H;
 
-const int dr[] = { 0, 0, 1, -1 };
-const int dc[] = { 1, -1, 0, 0 };
-const int dh[] = { 1, -1 };
+const int dr[4] = { 0, 0, 1, -1 };
+const int dc[4] = { 1, -1, 0, 0 };
+const int dh[2] = { 1, -1 };
 
 bool isInPlane(int r, int c) {
 	if (0 <= r && r < R && 0 <= c && c < C)
