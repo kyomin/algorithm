@@ -13,6 +13,9 @@ vector<ll> CD;
 long A[MAX], B[MAX], C[MAX], D[MAX];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N;
 	cin >> N;
 
