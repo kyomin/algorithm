@@ -10,9 +10,8 @@ string solution(string n) {
 
 		int sum = 0;
 
-		for (int i = 0; i < len; i++) {
+		for (int i = 0; i < len; i++)
 			sum += (int)(n[i] - '0');
-		}
 
 		n = to_string(sum);
 	}
@@ -21,6 +20,9 @@ string solution(string n) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	while (true) {
 		string n;
 		cin >> n;
