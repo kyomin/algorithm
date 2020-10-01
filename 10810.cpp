@@ -15,9 +15,8 @@ int main() {
 		int start, end, ball;
 		cin >> start >> end >> ball;
 
-		for (int i = start; i <= end; i++) {
+		for (int i = start; i <= end; i++)
 			baskets[i] = ball;
-		}
 	}
 
 	for (int i = 1; i <= N; i++)
