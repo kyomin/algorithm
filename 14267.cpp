@@ -9,21 +9,23 @@ int a[100001];
 void dfs(int node, int w) {
 	results[node] += w;
 
-	if (a[node] != 0) {
+	if (a[node] != 0)
 		dfs(a[node], w);
-	}
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int n, m;
 	cin >> n >> m;
 
 	for (int i = 1; i <= n; i++) {
 		int employee;
 		cin >> employee;
-		if (employee != -1) {
+
+		if (employee != -1)
 			a[employee] = i;
-		}
 	}
 		
 	for (int i = 0; i < m; i++) {
@@ -33,11 +35,10 @@ int main() {
 		dfs(employee, w);
 	}
 	
-	for (int i = 1; i <= n; i++) {
+	for (int i = 1; i <= n; i++)
 		cout << results[i] << ' ';
-	}
 
-	cout << endl;
+	cout << '\n';
 
 	return 0;
 }
