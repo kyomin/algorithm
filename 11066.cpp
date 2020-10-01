@@ -17,6 +17,9 @@ int sum[501];
 int file[501];
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> T;
 
 	for (int t = 0; t < T; t++) {
