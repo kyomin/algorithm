@@ -14,9 +14,8 @@ void dfs(int cnt) {
 	if (answer.size() == 7) {
 		// 합이 100인지 검사 후 출력
 		if (sum == 100) {
-			for (auto i : answer) {
+			for (auto i : answer)
 				printf("%d\n", i);
-			}
 
 			found = true;
 
@@ -44,9 +43,11 @@ void dfs(int cnt) {
 }
 
 int main() {
-	for (int i = 0; i < 9; i++) {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
+	for (int i = 0; i < 9; i++)
 		cin >> dwarfs[i];
-	}
 
 	dfs(0);
 
