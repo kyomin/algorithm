@@ -20,6 +20,9 @@ int solution(unsigned int N) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N;
 	cin >> N;
 
