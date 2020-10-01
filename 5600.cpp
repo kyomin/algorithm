@@ -12,6 +12,9 @@ void init(int len) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int a, b, c;
 	cin >> a >> b >> c;
 
@@ -61,9 +64,8 @@ int main() {
 			componenets[i] = 0;
 	}
 
-	for (int i = 1; i <= len; i++) {
+	for (int i = 1; i <= len; i++)
 		cout << componenets[i] << '\n';
-	}
 
 	return 0;
 }
