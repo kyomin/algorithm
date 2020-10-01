@@ -4,6 +4,9 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	while (true) {
 		string N;
 		cin >> N;
@@ -17,9 +20,8 @@ int main() {
 			int len = N.size();
 			int newNum = 1;
 
-			for (int i = 0; i < len; i++) {
+			for (int i = 0; i < len; i++)
 				newNum *= (int)(N[i] - '0');
-			}
 
 			N = to_string(newNum);
 		}
