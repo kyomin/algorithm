@@ -11,6 +11,9 @@ int pow(int x, int y) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int K;
 	cin >> K;
 
@@ -19,9 +22,8 @@ int main() {
 
 	arr.resize(len);
 
-	for (int i = 0; i < len; i++) {
+	for (int i = 0; i < len; i++)
 		cin >> arr[i];
-	}
 
 	int move = pow(2, K - 2);
 	vector<int> curFloor;
@@ -32,9 +34,8 @@ int main() {
 		// 각 층의 원소 개수
 		int floorLen = curFloor.size();
 
-		for (int i = 0; i < floorLen; i++) {
+		for (int i = 0; i < floorLen; i++)
 			cout << arr[curFloor[i]] << ' ';
-		}
 
 		cout << '\n';
 
@@ -53,9 +54,8 @@ int main() {
 	// 마지막 층 출력!
 	int floorLen = curFloor.size();
 
-	for (int i = 0; i < floorLen; i++) {
+	for (int i = 0; i < floorLen; i++)
 		cout << arr[curFloor[i]] << ' ';
-	}
 
 	return 0;
 }
