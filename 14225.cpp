@@ -14,9 +14,8 @@ void dfs(int cnt) {
 	if (vc.size() == M) {
 		int sum = 0;
 
-		for (auto num : vc) {
+		for (auto num : vc)
 			sum += num;
-		}
 
 		// 만들 수 있는 수에 대해 체크
 		check[sum] = true;
@@ -36,6 +35,9 @@ void dfs(int cnt) {
 }
 
 int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N;
 
 	for (int i = 0; i < N; i++)
