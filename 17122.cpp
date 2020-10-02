@@ -10,6 +10,10 @@ int cnt;
 int T;
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cnt = 1;
 
 	for (int y = 7; y >= 0; y--) {
@@ -58,11 +62,10 @@ int main() {
 
 		char c2 = colors[num];
 
-		if (c1 == c2) {
+		if (c1 == c2)
 			cout << "YES" << '\n';
-		} else {
+		else
 			cout << "NO" << '\n';
-		}
 	}
 
 	return 0;
