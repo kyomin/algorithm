@@ -1,7 +1,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <iostream>
 
 using namespace std;
 
@@ -26,29 +25,20 @@ int solution(int n, vector<int> money) {
 			그의 배수가 되는 것만 경우의 수 1로 만든다.
 		*/
 		if (i == 0) {
-			for (int j = coin; j <= n; j++) {
+			for (int j = coin; j <= n; j++)
 				if (j%coin == 0)
 					dp[j] = (dp[j] + 1) % 1000000007;
-			}
 
 			continue;
 		}
 
 		// 첫 코인이 아니라면 다음을 시행한다.
-		for (int j = coin; j <= n; j++) {
+		for (int j = coin; j <= n; j++)
 			// 기존의 코인들로 만들었던 것 + 새로운 코인이 개입해 만들 수 있는 것
 			dp[j] = (dp[j] + dp[j-coin]) % 1000000007;
-		}
 	}
 
 	answer = dp[n];
 
 	return answer;
-}
-
-int main() {
-	// Test 1
-	cout << solution(5, { 1, 2, 5 }) << endl;
-
-	return 0;
 }
