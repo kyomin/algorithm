@@ -18,15 +18,18 @@ bool solution(int N) {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int N;
 	cin >> N;
 
 	int result = 0;
 
-	for (int n = 1; n <= N; n++) {
+	for (int n = 1; n <= N; n++)
 		if (solution(n))
 			result++;
-	}
 
 	cout << result << endl;
 
