@@ -118,6 +118,7 @@ void dfs() {
 
 int main() {
 	cin.tie(NULL);
+	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
 	for (int i = 0; i < 10; i++)
