@@ -31,13 +31,15 @@ bool isImpossible() {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> R >> C;
 
-	for (int y = 0; y < R; y++) {
-		for (int x = 0; x < C; x++) {
+	for (int y = 0; y < R; y++)
+		for (int x = 0; x < C; x++)
 			cin >> map[y][x];
-		}
-	}
 
 	if (isImpossible()) {
 		cout << 0 << '\n';
