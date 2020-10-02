@@ -9,9 +9,8 @@ vector<int> vc;	// 출력할 것 담기
 
 void DFS(int start) {
 	if (vc.size() == M) {
-		for (auto i : vc) {
+		for (auto i : vc)
 			cout << i << ' ';
-		}
 
 		cout << '\n';
 
@@ -28,6 +27,10 @@ void DFS(int start) {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N >> M;
 
 	DFS(1);
