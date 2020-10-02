@@ -16,12 +16,15 @@ void solve() {
 	dp[2] = 2; 
 	dp[3] = 4;
 
-	for (int n = 4; n <= MAXN; n++) {
+	for (int n = 4; n <= MAXN; n++)
 		dp[n] = (dp[n - 1] + dp[n - 2] + dp[n - 3])%mod;
-	}
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int T;
 	cin >> T;
 
