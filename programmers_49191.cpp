@@ -27,7 +27,7 @@ int solution(int n, vector<vector<int>> results) {
 				cnt++;
 		
 		if (cnt - 1 == 0)
-			answer++;
+			answer += 1;
 	}
 
 	return answer;
