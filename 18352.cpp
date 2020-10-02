@@ -36,6 +36,10 @@ void bfs(int node) {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N >> M >> K >> X;
 
 	for (int i = 0; i < M; i++) {
@@ -56,9 +60,8 @@ int main() {
 		}
 	}
 
-	if (cnt == 0) {
+	if (cnt == 0)
 		cout << -1 << '\n';
-	}
 
 	return 0;
 }
