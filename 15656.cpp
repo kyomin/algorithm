@@ -11,9 +11,8 @@ vector<int> vc;
 
 void dfs() {
 	if (vc.size() == M) {
-		for (auto num : vc) {
+		for (auto num : vc)
 			cout << num << ' ';
-		}
 
 		cout << '\n';
 
@@ -30,6 +29,10 @@ void dfs() {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> N >> M;
 
 	arr.resize(N);
