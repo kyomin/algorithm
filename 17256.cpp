@@ -3,6 +3,10 @@
 using namespace std;
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	int ax, ay, az;
 	int cx, cy, cz;
 
