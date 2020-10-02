@@ -30,6 +30,7 @@ void Union(int x, int y) {
 
 int main() {
 	cin.tie(NULL);
+	cout.tie(NULL);
 	ios::sync_with_stdio(false);
 
 	int N, M, K;
@@ -62,9 +63,8 @@ int main() {
 
 	int ans = 0;
 
-	for (int n = 1; n <= N; n++) {
+	for (int n = 1; n <= N; n++)
 		ans += min_cost[n];
-	}
 
 	if (ans <= K) 
 		cout << ans << '\n';
