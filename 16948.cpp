@@ -47,10 +47,13 @@ void bfs(int r, int c) {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	memset(board, -1, sizeof(board));
 
 	cin >> N;
-
 	cin >> r1 >> c1 >> r2 >> c2;
 
 	bfs(r1, c1);
