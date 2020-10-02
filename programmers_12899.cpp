@@ -10,16 +10,13 @@ string solution(int n) {
 
 	int digits[4] = { 4, 1, 2, 4 };
 
-	while (n > 3)
-	{
+	while (n > 3) {
 		int r = n % 3;
 
 		n /= 3;
 
 		if (r == 0)
-		{
 			n -= 1;
-		}
 
 		answer += to_string(digits[r]);
 	}
@@ -33,10 +30,12 @@ string solution(int n) {
 
 int main()
 {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	for (int i = 1; i < 12; i++)
-	{
 		cout << solution(i) << '\n';
-	}
 
 	return 0;
 }
