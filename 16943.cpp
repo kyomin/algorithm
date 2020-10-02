@@ -22,9 +22,8 @@ void dfs() {
 		
 		string num = "";
 
-		for (auto c : vc) {
+		for (auto c : vc)
 			num += c;
-		}
 
 		maxPQ.push(atoi(num.c_str()));
 
@@ -45,6 +44,10 @@ void dfs() {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> A >> B;
 	M = A.size();
 
