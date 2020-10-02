@@ -8,9 +8,8 @@ int M, N;
 
 void dfs() {
 	if (container.size() == N) {
-		for (auto i : container) {
+		for (auto i : container)
 			cout << i << ' ';
-		}
 
 		cout << '\n';
 
@@ -27,6 +26,10 @@ void dfs() {
 }
 
 int main() {
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ios::sync_with_stdio(false);
+
 	cin >> M >> N;
 
 	dfs();
