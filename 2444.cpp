@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int N;
+	cin >> N;
+
+	if (N == 1) {
+		cout << '*' << '\n';
+		return 0;
+	}
+
+	for (int i = 1; i <= N; i++) {
+		int num = 2 * i - 1;
+
+		for (int j = 0; j < N - i; j++)
+			cout << ' ';
+
+		for (int j = 0; j < num; j++)
+			cout << '*';
+
+		cout << '\n';
+	}
+
+	for (int i = N - 1; i >= 1; i--) {
+		int num = 2 * i - 1;
+
+		for (int j = 0; j < N - i; j++)
+			cout << ' ';
+
+		for (int j = 0; j < num; j++)
+			cout << '*';
+		
+		cout << '\n';
+	}
+
+	return 0;
+}
