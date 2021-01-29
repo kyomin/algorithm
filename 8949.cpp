@@ -13,8 +13,7 @@ int main() {
 	cin >> A >> B;
 
 	string ans = "";
-	int idx = 0;
-	int len_A = A.size();
+	int idx = 0;	int len_A = A.size();
 	int len_B = B.size();
 	int short_len = min(len_A, len_B);
 
