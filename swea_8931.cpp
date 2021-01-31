@@ -17,12 +17,10 @@ int main() {
 			int n;
 			cin >> n;
 
-			if (n != 0) {
+			if (n != 0)
 				s.push(n);
-			}
-			else {
+			else
 				s.pop();
-			}
 		}
 
 		int sum = 0;
