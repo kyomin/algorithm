@@ -7,8 +7,8 @@ using namespace std;
 
 int board[4][4];
 
-int dx[4] = { 1, 0, -1, 0 };
-int dy[4] = { 0, 1, 0, -1 };
+const int dx[4] = { 1, 0, -1, 0 };
+const int dy[4] = { 0, 1, 0, -1 };
 
 set<string> s;
 
