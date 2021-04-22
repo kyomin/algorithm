@@ -71,14 +71,3 @@ public:
 		return ans;
 	}
 };
-
-int main() {
-	Solution sol;
-	vector<vector<char>> v = {
-		{'1', '1', '1', '1', '0'},
-		{'1', '1', '0', '1', '0'},
-		{'1', '1', '0', '0', '0'},
-		{'0', '0', '0', '0', '0'}
-	};
-	sol.numIslands(v);
-}
