@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
@@ -19,21 +18,20 @@ int main() {
 	}
 
 	int s = 0, e = 0, count = 0, sum = 0;
-
 	while (true) {
 		if (sum == M)
 			count++;
 
-		if ((e == N) && (sum <= M))
+		if (s == N && e == N)
 			break;
 
-		if (sum < M) {
-			sum += A[e];
-			e++;
-		}
-		else {
+		if (e == N || sum >= M) {
 			sum -= A[s];
 			s++;
+		}
+		else {
+			sum += A[e];
+			e++;
 		}
 	}
 
