@@ -30,22 +30,15 @@ int solution(vector<string> maps) {
 
 	vector<vector<int>> dist(R, vector<int>(C, 0));
 
-	Point start, exit, lever;
+	// 시작 좌표 찾기
+	Point start;
 	for (int r = 0; r < R; r++) {
 		for (int c = 0; c < C; c++) {
 			if (maps[r][c] == 'S') {
 				start.r = r;
 				start.c = c;				
-			}
 
-			if (maps[r][c] == 'E') {
-				exit.r = r;
-				exit.c = c;
-			}
-
-			if (maps[r][c] == 'L') {
-				lever.r = r;
-				lever.c = c;
+				break;
 			}
 		}
 	}
