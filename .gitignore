@@ -1,4 +1,5 @@
 /Debug
+.vs
 Algorithm.vcxproj
 Algorithm.vcxproj.filters
 Algorithm.vcxproj.user
